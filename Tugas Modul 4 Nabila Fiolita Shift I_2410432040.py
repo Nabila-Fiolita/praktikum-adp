@@ -1,4 +1,3 @@
-
 while True:
      r=int(input("Masukkan jumlah baris kursi (minimal 4):"))
      c=int(input("Masukkan jumlah kolom kursi (minimal 4):"))
@@ -43,6 +42,9 @@ while r>=4 and c>=4 :
                                                        
                      else:
                            continue
+     
+            
+  
      
             
   
