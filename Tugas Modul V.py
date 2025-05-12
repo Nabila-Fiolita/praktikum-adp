@@ -1,43 +1,54 @@
-n=int(input("Masukkan Jumlah Mahasiswa Praktikum ADP:"))
-a=[]
-jumlah_akhir=0
-for i in range(n):
-    b=input("Masukkan Nama:")
-    c=int(input("Masukkan Nilai Pretest:"))
-    d=int(input("Masukkan Nilai Postest:"))
-    e=int(input("Masukkan Nilai Makalah:"))
-    nilai_akhirpretest=0.4*c
-    nilai_akhirpostest=0.4*d
-    nilai_akhirmakalah=0.2*e
-    total=nilai_akhirpretest+nilai_akhirpostest+nilai_akhirmakalah
-    jumlah_akhir+=total
-    a.append((b,total))
-print("\n"+ "_"*35) 
-print(f"{'Nama Mahasiswa':20} {'|'} {'Nilai Akhir':12}")
-print("_"*35)
-for b , total in a:
-    print(f"{b:20} {'|'} {total:12.2f}")
-g=a[0]
-h=a[0]
-for j in range(len(a)):
-    if a[j][1]>h[1]:
-        h=a[j]
-    elif a[j][1]<g[1]:
-        g=a[j]
-print("_"*35)
-print(f"Rata-Rata Nilai Akhir:{(jumlah_akhir/n):.2f}")
-print("_"*35)
-print(f'Nilai Tertinggi:{h[1]:.2f}\nNama Mahasiswa :{h[0]}')
-print(f'Nilai Terendah :{g[1]:.2f}\nNama Mahasiswa :{g[0]}')
-print("_"*35)
-l=jumlah_akhir/n
-print("Nama Mahasiswa Di Atas Rata-Rata ")
-print("_"*35)
-for data in a:
-    if data[1]>l:
-        print(f"{data[0]}")
-print("_"*35)
+n = int(input("Masukkan Jumlah Mahasiswa Praktikum ADP:"))
+nama = []
+nilai = []
+jumlah_akhir = 0
 
-   
+for i in range(n):
+    b = input("Masukkan Nama: ")
+    c = int(input("Masukkan Nilai Pretest: "))
+    d = int(input("Masukkan Nilai Postest: "))
+    e = int(input("Masukkan Nilai Makalah: "))
+    
+    total = 0.4 * c + 0.4 * d + 0.2 * e
+    jumlah_akhir += total
+    
+    nama.append(b)
+    nilai.append(total)
+
+print("\n" + "_" * 35)
+print(f"{'Nama Mahasiswa':20} | {'Nilai Akhir':12}")
+print("_" * 35)
+for i in range(n):
+    print(f"{nama[i]:20} | {nilai[i]:12.2f}")
+
+# Cari nilai tertinggi dan terendah
+nilai_tertinggi = nilai[0]
+nilai_terendah = nilai[0]
+nama_tertinggi = nama[0]
+nama_terendah = nama[0]
+
+for i in range(n):
+    if nilai[i] > nilai_tertinggi:
+        nilai_tertinggi = nilai[i]
+        nama_tertinggi = nama[i]
+    elif nilai[i] < nilai_terendah:
+        nilai_terendah = nilai[i]
+        nama_terendah = nama[i]
+
+print("_" * 35)
+print(f"Rata-Rata Nilai Akhir: {(jumlah_akhir / n):.2f}")
+print("_" * 35)
+print(f"Nilai Tertinggi: {nilai_tertinggi:.2f}\nNama Mahasiswa: {nama_tertinggi}")
+print(f"Nilai Terendah : {nilai_terendah:.2f}\nNama Mahasiswa: {nama_terendah}")
+print("_" * 35)
+
+# Tampilkan nama yang nilai di atas rata-rata
+print("Nama Mahasiswa Di Atas Rata-Rata ")
+print("_" * 35)
+rata_rata = jumlah_akhir / n
+for i in range(n):
+    if nilai[i] > rata_rata:
+        print(nama[i])
+print("_" * 35)
 
 
