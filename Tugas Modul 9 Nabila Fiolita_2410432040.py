@@ -1,0 +1,23 @@
+import os, time
+from termcolor import colored
+os.system('cls')
+print(f"      {colored('|| ||', 'magenta')}")  
+print("     ( ^.^ )")
+print(f"  {colored('SI PALING PINTAR','magenta')}")
+print("")
+time.sleep(1)
+for i in range(10):
+    os.system('cls')
+    print("Loading."+"."*(i%3+1))
+    time.sleep(0.2)
+os.system('cls')
+print("")
+time.sleep(0.5)
+print("YUK BERSAMA KITA", colored("JADI PINTAR ! >.<", 'magenta', attrs=['bold'])) 
+time.sleep(1)
+print()
+print(f"      {colored('|| ||', 'magenta')}")  
+print("    \( ^.^ )/")
+print(f"    {colored('with Ovi','magenta')}")
+time.sleep(1)
+print(f" {colored('Teman Belajarmu','magenta')}")
